@@ -1,0 +1,61 @@
+body {
+    background-image: url(./../img/bg.jpeg);
+}
+
+.nav {
+    justify-content: center;
+    padding: 20px 0;
+}
+
+h2,
+label {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav .nav-item button {
+    width: 200px;
+    text-transform: uppercase;
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+    transition: all 0.5s;
+}
+
+.nav .nav-item button:hover {
+    background-color: rgb(37, 37, 61);
+    border-color: rgb(37, 37, 61);
+    color: white;
+}
+
+.nav .nav-item .active {
+    background-color: rgb(37, 37, 61);
+    border-color: rgb(37, 37, 61);
+}
+
+.tab-content .tab-pane .container {
+    background-color: rgb(0, 0, 0, 0.5);
+    box-shadow: 2px 6px 50px#fff;
+}
+
+.tab-content .ketQua {
+    margin-top: 15px;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.tab-content .ketQua p,
+h3 {
+    margin: 10px;
+}
+
+.tab-content .ketQua span {
+    font-weight: 700;
+}
+
+.btn-dark {
+    font-size: 18px;
+    background-color: rgb(37, 37, 61);
+}
