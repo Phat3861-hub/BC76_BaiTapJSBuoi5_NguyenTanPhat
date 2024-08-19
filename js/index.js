@@ -118,17 +118,49 @@ function thueThuThuNhapCaNhan(thuNhapChiuThue) {
   if (thuNhapChiuThue <= 60e6) {
     return thuNhapChiuThue * (DEN_60 / 100);
   } else if (60e6 < thuNhapChiuThue && thuNhapChiuThue <= 120e6) {
-    return thuNhapChiuThue * (TREN_60_DEN_120 / 100);
+    return (
+      60e6 * (DEN_60 / 100) + (thuNhapChiuThue - 60e6) * (TREN_60_DEN_120 / 100)
+    );
   } else if (120e6 < thuNhapChiuThue && thuNhapChiuThue <= 210e6) {
-    return thuNhapChiuThue * (TREN_120_DEN_210 / 100);
+    return (
+      60e6 * (DEN_60 / 100) +
+      60e6 * (TREN_60_DEN_120 / 100) +
+      (thuNhapChiuThue - 120e6) * (TREN_120_DEN_210 / 100)
+    );
   } else if (210e6 < thuNhapChiuThue && thuNhapChiuThue <= 384e6) {
-    return thuNhapChiuThue * (TREN_210_DEN_384 / 100);
+    return (
+      60e6 * (DEN_60 / 100) +
+      60e6 * (TREN_60_DEN_120 / 100) +
+      90e6 * (TREN_120_DEN_210 / 100) +
+      (thuNhapChiuThue - 210e6) * (TREN_210_DEN_384 / 100)
+    );
   } else if (384e6 < thuNhapChiuThue && thuNhapChiuThue <= 624e6) {
-    return thuNhapChiuThue * (TREN_384_DEN_624 / 100);
+    return (
+      60e6 * (DEN_60 / 100) +
+      60e6 * (TREN_60_DEN_120 / 100) +
+      90e6 * (TREN_120_DEN_210 / 100) +
+      174e6 * (TREN_210_DEN_384 / 100) +
+      (thuNhapChiuThue - 384e6) * (TREN_384_DEN_624 / 100)
+    );
   } else if (624e6 < thuNhapChiuThue && thuNhapChiuThue <= 960e6) {
-    return thuNhapChiuThue * (TREN_624_DEN_960 / 100);
+    return (
+      60e6 * (DEN_60 / 100) +
+      60e6 * (TREN_60_DEN_120 / 100) +
+      90e6 * (TREN_120_DEN_210 / 100) +
+      174e6 * (TREN_210_DEN_384 / 100) +
+      240e6 * (TREN_384_DEN_624 / 100) +
+      (thuNhapChiuThue - 624e6) * (TREN_624_DEN_960 / 100)
+    );
   } else if (thuNhapChiuThue > 960e6) {
-    return thuNhapChiuThue * (TREN_960 / 100);
+    return (
+      60e6 * (DEN_60 / 100) +
+      60e6 * (TREN_60_DEN_120 / 100) +
+      90e6 * (TREN_120_DEN_210 / 100) +
+      174e6 * (TREN_210_DEN_384 / 100) +
+      240e6 * (TREN_384_DEN_624 / 100) +
+      336e6 * (TREN_624_DEN_960 / 100) +
+      (thuNhapChiuThue - 960e6) * (TREN_960 / 100)
+    );
   }
 }
 document.getElementById("tinhThue").onclick = function () {
